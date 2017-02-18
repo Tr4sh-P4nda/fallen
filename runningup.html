@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Models</title>
+    <meta name="description" content="Models — A-Frame">
+  <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.1/dist/aframe-altspace-component.min.js"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script>
+<script src="https://rawgit.com/oOblik/AltspaceVR-Native-Components-JS/master/js/JSNativeComponents.js"></script>
+<script src="https://rawgit.com/Enderthexen/Slapatron4K/master/BS.js"></script>
+<script src="https://sdk.altvr.com/libs/altspace.js/1.0.0/altspace.js"></script>
+
+ 
+  </head>
+  <body>
+
+
+    <a-scene debug altspace="fullspace: true" sync-system="author: altspacevr; app: sync-test">
+
+
+ <a-assets>
+ <img id="sky1" src="sky.jpg">
+        <a-asset-item id="bil1all-mtl" src="bill11f/bil1all.mtl"></a-asset-item>
+        <a-asset-item id="bil1all-obj" src="bill11f/bil1all.obj"></a-asset-item>
+          
+        <a-asset-item id="f-1-mtl" src="bill1-2f/f-1.mtl"></a-asset-item>
+        <a-asset-item id="f-1-obj" src="bill1-2f/f-1.obj"></a-asset-item>
+
+        <a-asset-item id="f-2-mtl" src="bill1-2f/f-2.mtl"></a-asset-item>
+        <a-asset-item id="f-2-obj" src="bill1-2f/f-2.obj"></a-asset-item>
+
+        <a-asset-item id="f-3-mtl" src="bill1-2f/f-3.mtl"></a-asset-item>
+        <a-asset-item id="f-3-obj" src="bill1-2f/f-3.obj"></a-asset-item>
+
+        <a-asset-item id="f-4-mtl" src="bill1-2f/f-4.mtl"></a-asset-item>
+        <a-asset-item id="f-4-obj" src="bill1-2f/f-4.obj"></a-asset-item>
+
+        <a-asset-item id="bill1-2f-object-mtl" src="bill1-2f/object.mtl"></a-asset-item>
+        <a-asset-item id="bill1-2f-object-obj" src="bill1-2f/object.obj"></a-asset-item>
+
+        <a-asset-item id="tekkotu1-mtl" src="bill1-2f/tekkotu1.mtl"></a-asset-item>
+        <a-asset-item id="tekkotu1-obj" src="bill1-2f/tekkotu1.obj"></a-asset-item>
+
+        <a-asset-item id="tower-dodai-mtl" src="bill1-2f/tower-dodai.mtl"></a-asset-item>
+        <a-asset-item id="tower-dodai-obj" src="bill1-2f/tower-dodai.obj"></a-asset-item>
+
+        <a-asset-item id="tower1-mtl" src="bill1-2f/tower1.mtl"></a-asset-item>
+        <a-asset-item id="tower1-obj" src="bill1-2f/tower1.obj"></a-asset-item>
+
+        <a-asset-item id="tower2-mtl" src="bill1-2f/tower2.mtl"></a-asset-item>
+        <a-asset-item id="tower2-obj" src="bill1-2f/tower2.obj"></a-asset-item>
+
+        <a-asset-item id="tower3-mtl" src="bill1-2f/tower3.mtl"></a-asset-item>
+        <a-asset-item id="tower3-obj" src="bill1-2f/tower3.obj"></a-asset-item>
+
+        <a-asset-item id="bill2-tenjou-mtl" src="bill2/bill2-tenjou.mtl"></a-asset-item>
+        <a-asset-item id="bill2-tenjou-obj" src="bill2/bill2-tenjou.obj"></a-asset-item>
+        <a-asset-item id="bill2-object-mtl" src="bill2/bill2-object.mtl"></a-asset-item>
+        <a-asset-item id="bill2-object-obj" src="bill2/bill2-object.obj"></a-asset-item>
+
+        <a-asset-item id="tower2-1-mtl" src="bill2/tower2-1.mtl"></a-asset-item>
+        <a-asset-item id="tower2-1-obj" src="bill2/tower2-1.obj"></a-asset-item>
+
+        <a-asset-item id="tower2-2-mtl" src="bill2/tower2-2.mtl"></a-asset-item>
+        <a-asset-item id="tower2-2-obj" src="bill2/tower2-2.obj"></a-asset-item>
+
+        <a-asset-item id="tekkotu-2-mtl" src="bill2/tekkotu-2.mtl"></a-asset-item>
+        <a-asset-item id="tekkotu-2-obj" src="bill2/tekkotu-2.obj"></a-asset-item>
+
+        <a-asset-item id="tower2-asiba-mtl" src="bill2/tower2-asiba.mtl"></a-asset-item>
+        <a-asset-item id="tower2-asiba-obj" src="bill2/tower2-asiba.obj"></a-asset-item>
+
+        <a-asset-item id="tower2-dodai-mtl" src="bill2/tower2-dodai1.mtl"></a-asset-item>
+        <a-asset-item id="tower2-dodai-obj" src="bill2/tower2-dodai1.obj"></a-asset-item>  
+
+        <a-asset-item id="kure-n1-ashiba-mtl" src="bill2/kure-n1-ashiba.mtl"></a-asset-item>
+        <a-asset-item id="kure-n1-ashiba-obj" src="bill2/kure-n1-ashiba.obj"></a-asset-item>  
+
+        <a-asset-item id="kure-n1-dodai-mtl" src="bill2/kure-n1-dodai.mtl"></a-asset-item>
+        <a-asset-item id="kure-n1-dodai-obj" src="bill2/kure-n1-dodai.obj"></a-asset-item>
+ 
+        <a-asset-item id="kure-n1-arm-mtl" src="bill2/kure-n1-arm.mtl"></a-asset-item>
+        <a-asset-item id="kure-n1-arm-obj" src="bill2/kure-n1-arm.obj"></a-asset-item>
+
+        <a-asset-item id="kure-n2-ashiba-mtl" src="bill2/kure-n2-asiba.mtl"></a-asset-item>
+        <a-asset-item id="kure-n2-ashiba-obj" src="bill2/kure-n2-asiba.obj"></a-asset-item>   
+
+        <a-asset-item id="kure-n2-dodai-mtl" src="bill2/kure-n2-dodai.mtl"></a-asset-item>
+        <a-asset-item id="kure-n2-dodai-obj" src="bill2/kure-n2-dodai.obj"></a-asset-item>
+
+        <a-asset-item id="kure-n2-arm-mtl" src="bill2/kure-n2-arm.mtl"></a-asset-item>
+        <a-asset-item id="kure-n2-arm-obj" src="bill2/kure-n2-arm.obj"></a-asset-item>
+
+        <a-asset-item id="kure-n3-ashiba-mtl" src="bill2/kure-n3-ashiba.mtl"></a-asset-item>
+        <a-asset-item id="kure-n3-ashiba-obj" src="bill2/kure-n3-ashiba.obj"></a-asset-item>  
+
+        <a-asset-item id="kure-n3-dodai-mtl" src="bill2/kure-n3-dodai.mtl"></a-asset-item>
+        <a-asset-item id="kure-n3-dodai-obj" src="bill2/kure-n3-dodai.obj"></a-asset-item>
+
+        <a-asset-item id="kure-n3-arm-mtl" src="bill2/kure-n3-arm.mtl"></a-asset-item>
+        <a-asset-item id="kure-n3-arm-obj" src="bill2/kure-n3-arm.obj"></a-asset-item>
+     
+        <a-asset-item id="kure-n4-dodai-mtl" src="bill2/kure-n4-dodai.mtl"></a-asset-item>
+        <a-asset-item id="kure-n4-dodai-obj" src="bill2/kure-n4-dodai.obj"></a-asset-item>
+        <a-asset-item id="kure-n4-arm-mtl" src="bill2/kure-n4-arm.mtl"></a-asset-item>
+        <a-asset-item id="kure-n4-arm-obj" src="bill2/kure-n4-arm.obj"></a-asset-item>
+        <a-asset-item id="kure-n5-ashiba-mtl" src="bill2/kure-n5-ashiba.mtl"></a-asset-item>
+        <a-asset-item id="kure-n5-ashiba-obj" src="bill2/kure-n5-ashiba.obj"></a-asset-item>    
+        <a-asset-item id="kure-n5-dodai-mtl" src="bill2/kure-n5-dodai.mtl"></a-asset-item>
+        <a-asset-item id="kure-n5-dodai-obj" src="bill2/kure-n5-dodai.obj"></a-asset-item>
+        <a-asset-item id="kure-n5-arm-mtl" src="bill2/kure-n5-arm.mtl"></a-asset-item>
+        <a-asset-item id="kure-n5-arm-obj" src="bill2/kure-n5-arm.obj"></a-asset-item>
+
+        <a-asset-item id="gaikan-bill-mtl" src="gaikan-bill.mtl"></a-asset-item>
+        <a-asset-item id="gaikan-bill-obj" src="gaikan-bill.obj"></a-asset-item>
+-->
+</a-assets>
+
+
+<a-image src="fallen2.jpg" position="-16 2.5 -3" rotation="0 90 0" scale="3 5 3" opacity="1" altspace-cursor-collider='enabled: false'></a-image>
+<a-entity n-text= "fontSize: 2; width:5  height: 1;horizontalAlign:left;
+        text: 
+~Fallen~
+You have to rapidly ascended to the top!!
+
+Thanks a lot, Jacob, for helping me!
+
+produced by Kosuke Tanabe
+E-mail     sobatang@gmail.com
+Instagram  tanabe.kousuke(baby icon)
+Facebook   Kousuke Tanabe(eating chicken feet guy icon)
+"  
+
+ position='-15.8 2.7 -7.5' rotation='0 90 0'></a-entity>
+
+
+
+<a-box  geometry="primitive:box;width:15;height:6;depth:0.5" material="color: blue;opacity:0" position="-6.3 10 -60" rotation="0 0 0"  scale="1 1 1" altspace-cursor-collider='enabled: ture'></a-box>
+<a-box  geometry="primitive:box;width:10;height:6;depth:0.5" material="color: blue;opacity:0" position="20 36 -60" rotation="0 0 0"  scale="1 1 1" altspace-cursor-collider='enabled: ture'></a-box>
+
+<a-box  geometry="primitive:box;width:14;height:6;depth:0.5" material="color: blue;opacity:0" position="20 67 -8" rotation="0 0 0"  scale="1 1 1" altspace-cursor-collider='enabled: ture'></a-box>
+<a-box  geometry="primitive:box;width:10;height:6;depth:0.5" material="color: blue;opacity:0" position="-35 124 -65" rotation="0 0 0"  scale="1 1 1" altspace-cursor-collider='enabled: ture'></a-box>
+
+
+<a-sky src="#sky1" radius="2500"  position="0 0 0" rotation="0 0 0"></a-sky>
+
+<a-entity position="0 0 0"　rotation="0 0 0"　scale="0.5 0.5 0.5">
+<a-obj-model src="#bil1all-obj" mtl="#bil1all-mtl" position="0 0 0" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+  <a-box id="kaidan" n-box-collider="size: 5 16 0.5; type: environment" geometry="primitive:box;width:5;height:16;depth:0.5" material="color: blue;opacity:0" position="-6.3 3.2 1" rotation="50 0 0"  scale="1 1 1" altspace-cursor-collider='enabled: ture'></a-box>
+
+<a-obj-model src="#gaikan-bill-obj" mtl="#gaikan-bill-mtl" n-mesh-collider="type: environment; convex: true" position="0 0 0" scale="1 1 1" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="gaikan-bill1.obj" mtl="gaikan-bill1.mtl" n-mesh-collider="type: environment; convex: true" position="0 0 0" scale="1 1 1" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+
+
+
+<a-obj-model src="douro.obj" mtl="douro.mtl" n-mesh-collider="type: environment; convex: true" position="0 0 0" scale="1 1 1" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+<a-obj-model src="circle.obj" mtl="circle.mtl" position="0 -120 0" scale="1 1 1" ></a-obj-model>
+<a-obj-model src="circle.obj" mtl="circle2.mtl" position="0 -120 0" rotation="0 60 0" scale="0.8 0.8 0.8" ></a-obj-model>
+<a-image src="douro.png" position="0 -180 -14" rotation="90 90 0" scale="2000 2000 2000" opacity="0.4" altspace-cursor-collider='enabled: false'></a-image>
+
+
+
+
+<a-entity id="bil1-2f" position="0 8 0">
+<a-box n-box-collider="size: 10 5 0.5; type: environment" geometry="primitive:box;width:10;height:5;depth:0.5" material="color: red;opacity:0" position="4 2 -11" rotation="0 0 0"  scale="1 1 1"></a-box>
+<a-box n-box-collider="size: 10 5 0.5; type: environment" geometry="primitive:box;width:10;height:5;depth:0.5" material="color: red;opacity:0" position="-12 2 -11" rotation="0 0 0"  scale="1 1 1"></a-box>
+<a-box n-box-collider="size: 45 5 0.5; type: environment" geometry="primitive:box;width:45;height:5;depth:0.5" material="color: red;opacity:0" position="0 3 12" rotation="0 0 0"  scale="1 1 1"></a-box>
+<a-box n-box-collider="size: 25 5 0.5; type: environment" geometry="primitive:box;width:25;height:5;depth:0.5" material="color: red;opacity:0" position="3 2 1" rotation="0 90 0"  scale="1 1 1"></a-box>
+<a-box n-box-collider="size: 25 5 0.5; type: environment" geometry="primitive:box;width:25;height:5;depth:0.5" material="color: red;opacity:0" position="-14 2 1" rotation="0 90 0"  scale="1 1 1"></a-box>
+</a-entity>
+
+
+<a-obj-model src="#tekkotu1-obj" mtl="#tekkotu1-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture' position="-3 0 0" scale="0.2 1 1"></a-obj-model>
+<a-obj-model src="#tekkotu1-obj" mtl="#tekkotu1-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture' position="-6 0 0" scale="0.2 1 1"></a-obj-model>
+
+<a-entity>
+<a-obj-model src="#f-1-obj" mtl="#f-1-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture'></a-obj-model>
+<a-obj-model src="#f-2-obj" mtl="#f-2-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture'></a-obj-model>
+<a-obj-model src="#f-3-obj" mtl="#f-3-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture'></a-obj-model>
+<a-obj-model src="#f-4-obj" mtl="#f-4-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture'></a-obj-model>
+</a-entity>
+
+
+
+
+
+<a-obj-model src="#tower-dodai-obj" mtl="#tower-dodai-mtl" ></a-obj-model>
+<a-obj-model src="#bill1-2f-object-obj" mtl="#bill1-2f-object-mtl" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+<a-obj-model src="#tower1-obj" mtl="#tower1-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="#tower2-obj" mtl="#tower2-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="#tower3-obj" mtl="#tower3-mtl" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="bill1-2f/tower3ashiba.obj" mtl="bill1-2f/tower3ashiba.mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+<a-entity>
+<a-obj-model src="bill1-2f/tower3elevetor.obj" mtl="bill1-2f/tower3elevetor.mtl" n-mesh-collider="type: environment; convex: true" scale="1 1 1">
+<a-animation  attribute="position" direction="alternate" dur="9000" to="0 58 0" repeat="indefinite"> </a-animation>
+</a-obj-model>
+</a-entity>
+
+<a-entity position="0 0 0">
+<a-obj-model src="#bill2-tenjou-obj" mtl="#bill2-tenjou-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+ <a-obj-model src="bill2/bill2-object1.obj" mtl="#bill2-object-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+ <a-obj-model src="bill2/bill2-object2.obj" mtl="#bill2-object-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+ <a-obj-model src="bill2/bill2-object3.obj" mtl="#bill2-object-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+ <a-obj-model src="bill2/bill2-object4.obj" mtl="#bill2-object-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+<a-obj-model src="#tower2-1-obj" mtl="#tower2-1-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="#tower2-2-obj" mtl="#tower2-2-mtl" n-mesh-collider="type: environment; convex: false" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="#tekkotu-2-obj" mtl="#tekkotu-2-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: true'></a-obj-model>
+<a-obj-model src="#tower2-asiba-obj" mtl="#tower2-asiba-mtl" n-mesh-collider="type: environment; convex: false" altspace-cursor-collider='enabled: true'></a-obj-model>
+<a-obj-model src="#tower2-dodai-obj" mtl="#tower2-dodai-mtl" n-mesh-collider="type: environment; convex: false" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+<a-obj-model src="hasigo1.obj" mtl="hasigo1.mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture'></a-obj-model>
+<a-obj-model src="hasigo2.obj" mtl="hasigo2.mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture'></a-obj-model>
+<a-obj-model src="hasigo3.obj" mtl="hasigo3.mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: ture'></a-obj-model>
+
+
+
+
+<!--
+<a-box id="kaid1an" n-box-collider="size: 5 279 0.5; type: environment" geometry="primitive:box;width:5;height:279;depth:0.5" material="color: blue" position="-10 61 -40" rotation="40 90 0" scale="1 1 1" altspace-cursor-collider='enabled: ture'></a-box>
+-->
+
+
+<a-obj-model src="#kure-n1-ashiba-obj" mtl="#kure-n1-ashiba-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled:false'></a-obj-model>
+
+<a-obj-model src="#kure-n1-dodai-obj" mtl="#kure-n1-dodai-mtl" altspace-cursor-collider='enabled: false' ></a-obj-model>
+     <a-obj-model src="bill2/kure-n1-dodai-coli.obj" material="color: red;opacity:0" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false' ></a-obj-model>
+
+<a-obj-model src="#kure-n1-arm-obj" mtl="#kure-n1-arm-mtl" altspace-cursor-collider='enabled: false'></a-obj-model>
+  <a-obj-model src="bill2/kure-n1-arm-coli1.obj" material="color: red;opacity:0" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+  <a-obj-model src="bill2/kure-n1-arm-coli2.obj" material="color: red;opacity:0" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+
+<a-obj-model src="#kure-n2-ashiba-obj" mtl="#kure-n2-ashiba-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled:false'></a-obj-model>
+<a-obj-model src="#kure-n2-dodai-obj" mtl="#kure-n2-dodai-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="#kure-n2-arm-obj" mtl="#kure-n2-arm-mtl" altspace-cursor-collider='enabled: false'></a-obj-model>
+  <a-obj-model src="bill2/kure-n2-arm-coli1.obj" material="color: red;opacity:0" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+  <a-obj-model src="bill2/kure-n2-arm-coli2.obj" material="color: red;opacity:0" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+
+<a-obj-model src="#kure-n3-ashiba-obj" mtl="#kure-n3-ashiba-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled:false'></a-obj-model>
+<a-obj-model src="#kure-n3-dodai-obj" mtl="#kure-n3-dodai-mtl" n-mesh-collider="type: environment; convex: false" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="kure-n3-dodai-coli.obj" material="color: red;opacity:0" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+<a-obj-model src="#kure-n3-arm-obj" mtl="#kure-n3-arm-mtl" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+
+  <a-obj-model src="bill2/kure-n3-arm-coli1.obj" material="color: red;opacity:0" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+  <a-obj-model src="bill2/kure-n3-arm-coli2.obj" material="color: red;opacity:0" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+
+
+<a-entity rotation="0 10 0">
+<a-obj-model src="#kure-n4-dodai-obj" mtl="#kure-n4-dodai-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="#kure-n4-arm-obj" mtl="#kure-n4-arm-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+</a-entity>
+
+
+
+
+
+<a-obj-model src="bill2/kaiten-bartate.obj" mtl="bill2/kaiten-bartate.mtl" position="0 0 0"></a-obj-model>
+
+<a-obj-model src="bill2/kaiten-bar.obj" mtl="bill2/kaiten-bar.mtl" position="4.2 67.5 -35.1" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+  
+<a-animation id="role"
+        
+            attribute="rotation"
+            direction="alternate"
+            dur="5000"
+            delay="1"
+ 
+            to="0 160 0"
+            repeat="indefinite"
+            
+            >
+            
+        </a-animation>
+</a-obj-model>
+
+
+
+<a-entity id="bird" position="20 38 0"  rotation="0 90 0" scale="0.5 0.5 0.5">
+
+<a-obj-model src="birdbody.obj" mtl="birdbody.mtl" position="" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-obj-model src="birdwingl.obj" mtl="birdwingl.mtl"  n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-animation id="role" attribute="rotation" direction="alternate" dur="200" to="0 0 60" repeat="indefinite"> </a-animation>
+</a-obj-model>
+<a-obj-model src="birdwingr.obj" mtl="birdwingr.mtl" position="" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-animation id="role2" attribute="rotation" direction="alternate" dur="200" to="0 0 -60" repeat="indefinite"> </a-animation>
+</a-obj-model>
+<a-animation  attribute="position" direction="alternate" dur="5000" from="50 0 -100" to="50 0 100" repeat="indefinite"> </a-animation>
+<a-animation  attribute="rotation" direction="alternate" dur="1000" delay="4000" from="0 -180 0" to="0 0 0" repeat="indefinite"> </a-animation>
+<a-box n-box-collider="size: 11 11 11; type: environment" geometry="primitive:box;width:11;height:11;depth:11" material="color: blue;opacity:0"></a-box>
+</a-entity>
+
+<a-entity id="bird2" position="25 38 -12"  rotation="0 90 0" scale="0.5 0.5 0.5">
+
+<a-obj-model src="birdbody.obj" mtl="birdbody.mtl" position="" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-obj-model src="birdwingl.obj" mtl="birdwingl.mtl"  n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-animation id="role" attribute="rotation" direction="alternate" dur="200" to="0 0 60" repeat="indefinite"> </a-animation>
+</a-obj-model>
+<a-obj-model src="birdwingr.obj" mtl="birdwingr.mtl" position="" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-animation id="role2" attribute="rotation" direction="alternate" dur="200" to="0 0 -60" repeat="indefinite"> </a-animation>
+</a-obj-model>
+<a-animation  attribute="position" direction="alternate" dur="5000" from="50 0 -50" to="50 0 50" repeat="indefinite"> </a-animation>
+<a-animation  attribute="rotation" direction="alternate" dur="1000" delay="4000" from="0 -180 0" to="0 0 0" repeat="indefinite"> </a-animation>
+<a-box n-box-collider="size: 11 11 11; type: environment" geometry="primitive:box;width:11;height:11;depth:11" material="color: blue;opacity:0"></a-box>
+</a-entity>
+
+
+<a-entity id="bird3" position="25 130 -22"  rotation="0 90 0" scale="0.5 0.5 0.5">
+
+<a-obj-model src="birdbody.obj" mtl="birdbody.mtl" position="" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-obj-model src="birdwingl.obj" mtl="birdwingl.mtl"  n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-animation id="role" attribute="rotation" direction="alternate" dur="200" to="0 0 60" repeat="indefinite"> </a-animation>
+</a-obj-model>
+<a-obj-model src="birdwingr.obj" mtl="birdwingr.mtl" position="" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-animation id="role2" attribute="rotation" direction="alternate" dur="200" to="0 0 -60" repeat="indefinite"> </a-animation>
+</a-obj-model>
+<a-animation  attribute="position" direction="alternate" dur="5000" from="70 0 -150" to="70 0 -30" repeat="indefinite"> </a-animation>
+<a-animation  attribute="rotation" direction="alternate" dur="1000" delay="4000" from="0 -180 0" to="0 0 0" repeat="indefinite"> </a-animation>
+<a-box n-box-collider="size: 11 11 11; type: environment" geometry="primitive:box;width:11;height:11;depth:11" material="color: blue;opacity:0"></a-box>
+</a-entity>
+
+
+
+
+
+<a-obj-model src="#kure-n5-ashiba-obj" mtl="#kure-n5-ashiba-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled:false'></a-obj-model>
+<a-obj-model src="#kure-n5-dodai-obj" mtl="#kure-n5-dodai-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="#kure-n5-arm-obj" mtl="#kure-n5-arm-mtl" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'></a-obj-model>
+<a-obj-model src="bill2/kaiten-bar.obj" mtl="bill2/kaiten-bar.mtl" position="-11 125 -35" scale="1.92 1 0.4" n-mesh-collider="type: environment; convex: true" altspace-cursor-collider='enabled: false'>
+<a-animation id="role2"
+        
+            attribute="rotation"
+            direction="alternate"
+            dur="85000"
+            delay="3"
+            from="0 143 5"
+            to="0 143.5 4.8"
+            repeat="indefinite"
+            
+            >
+            
+        </a-animation>
+</a-obj-model>
+<a-entity material="color: blue;opacity:0" geometry="primitive: box" position="-5 30 -22"  n-sound="autoplay: true; loop: true; src: start.wav;volume: 0.3 ; rolloff: cosine; minDistance: 1; maxDistance: 80"></a-entity>
+
+<a-entity material="color: red;opacity:0" geometry="primitive: box" position="-5 20 -22"  n-sound="autoplay: true; loop: true; src: wind.wav;volume: 0.1 ; rolloff: cosine; minDistance: 1; maxDistance: 75"></a-entity>
+
+<a-entity material="color: white;opacity:0" geometry="primitive: box" position="-5 160 -30"  n-sound="autoplay: true; loop: true; src: laststage2.wav;volume: 0.7 ; rolloff: cosine; minDistance: 1; maxDistance: 95"></a-entity>
+
+<!--
+
+-->
+
+
+</a-scene>
+  </body>
+</html>
