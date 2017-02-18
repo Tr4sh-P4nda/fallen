@@ -1,0 +1,7 @@
+newmtl tower2base:initialShadingGroup
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.06 0.06 0.06
+Tf 1.00 1.00 1.00
+map_Kd tower1-2.jpg
+Ni 1.00
