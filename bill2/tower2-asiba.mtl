@@ -1,0 +1,7 @@
+newmtl tower2_asiba:hhysSG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd tower2-asiba.jpg
+Ni 1.00
