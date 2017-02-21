@@ -1,0 +1,30 @@
+newmtl initialShadingGroup
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd towe-dodai.jpg
+Ni 1.00
+newmtl mati:phong1SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd biru1.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl tekkotu1:dddwSG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd tekkotu.jpg
+Ni 1.00
+newmtl tower2_dodai1:initialShadingGroup
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd towe-dodai.jpg
+Ni 1.00
