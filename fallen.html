@@ -14,29 +14,31 @@
 <script>
 // We override the default image loader since we don't want the altspace browser to load textures.
 // The client handles texture loading directly.
-THREE.Loader.Handlers.add(
-	/jpe?g|png/i,
-	{
-		load: function (url) {
-			// construct absolute url
-			if (url && !url.startsWith('http') && !url.startsWith('//')) {
-				if (url.startsWith('/')) {
-					url = location.origin + url;
-				}
-				else {
-					var currPath = location.pathname;
-					if (!currPath.endsWith('/')) {
-						currPath = location.pathname.split('/').slice(0, -1).join('/') + '/';
-					}
-					url = location.origin + currPath + url;
-				}
-			}
-			console.info('Allowing Altspace to load ' + url);
-			var image = {src: url};
-			return new THREE.Texture(image);
-		}
-	}
-);
+function getTexture (url, resolve) {
+  // construct absolute url
+  if (url && !url.startsWith('http') && !url.startsWith('//')) {
+    if (url.startsWith('/')) {
+      url = location.origin + url;
+    }
+    else {
+      var currPath = location.pathname;
+      if (!currPath.endsWith('/')) {
+        currPath = location.pathname.split('/').slice(0, -1).join('/') + '/';
+      }
+      url = location.origin + currPath + url;
+    }
+  }
+  console.info('Allowing Altspace to load ' + url);
+  var image = {src: url};
+  var tex = new THREE.Texture(image);
+  if (resolve) {
+    resolve(tex);
+  }
+  return tex;
+}
+AFRAME.utils.srcLoader.validateSrc = function (src, loadImage) { loadImage(src.match(/url\((.+)\)/)[1]); };
+THREE.Loader.Handlers.add(/jpe?g|png/i, { load: getTexture });
+THREE.TextureLoader.prototype.load = getTexture;
 </script>
 
  
@@ -48,7 +50,6 @@ THREE.Loader.Handlers.add(
 
 
  <a-assets>
- <img id="sky1" src="sky.jpg">
         <a-asset-item id="bil1all-mtl" src="bill11f/bil1all.mtl"></a-asset-item>
         <a-asset-item id="bil1all-obj" src="bill11f/bil1all.obj.txt"></a-asset-item>
           
@@ -170,7 +171,7 @@ Facebook   Kousuke Tanabe(eating chicken feet guy icon)
 <a-box  geometry="primitive:box;width:10;height:6;depth:0.5" material="color: blue;opacity:0" position="-35 124 -65" rotation="0 0 0"  scale="1 1 1" altspace-cursor-collider='enabled: ture'></a-box>
 
 
-<a-sky src="#sky1" radius="2500"  position="0 0 0" rotation="0 0 0"></a-sky>
+<a-sky src="sky.jpg" radius="2500"  position="0 0 0" rotation="0 0 0"></a-sky>
 
 <a-entity position="0 0 0"　rotation="0 0 0"　scale="0.5 0.5 0.5">
 <a-obj-model src="#bil1all-obj" mtl="#bil1all-mtl" position="0 0 0" altspace-cursor-collider='enabled: false'></a-obj-model>
